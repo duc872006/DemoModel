@@ -1,0 +1,51 @@
+﻿@model List<Example04.Models.DataModels.Member>
+
+<h2>Danh sách Member</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    + Thêm Member
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Username</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.MemberId</td>
+                <td>@member.Username</td>
+                <td>@member.Fullname</td>
+                <td>@member.Email</td>
+
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@member.MemberId"
+                       class="btn btn-info btn-sm">
+                        Chi tiết
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@member.MemberId"
+                       class="btn btn-warning btn-sm">
+                        Sửa
+                    </a>
+
+                    <a asp-action="Delete"
+                       asp-route-id="@member.MemberId"
+                       class="btn btn-danger btn-sm">
+                        Xóa
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

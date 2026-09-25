@@ -1,0 +1,49 @@
+﻿@model Example04.Models.DataModels.Member
+
+<h2 class="mb-4">Chi tiết Member</h2>
+
+<div class="card">
+    <div class="card-body">
+
+        <h4>Thông tin Member</h4>
+
+        <hr />
+
+        <div class="mb-3">
+            <strong>Mã Member:</strong>
+            @Model.MemberId
+        </div>
+
+        <div class="mb-3">
+            <strong>Username:</strong>
+            @Model.Username
+        </div>
+
+        <div class="mb-3">
+            <strong>Password:</strong>
+            @Model.Password
+        </div>
+
+        <div class="mb-3">
+            <strong>Họ tên:</strong>
+            @Model.Fullname
+        </div>
+
+        <div class="mb-3">
+            <strong>Email:</strong>
+            @Model.Email
+        </div>
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.MemberId"
+           class="btn btn-warning">
+            Sửa
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Quay lại
+        </a>
+
+    </div>
+</div>

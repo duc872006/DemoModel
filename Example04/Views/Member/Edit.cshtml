@@ -1,0 +1,43 @@
+﻿@model Example04.Models.DataModels.Member
+
+<h2 class="mb-4">Sửa Member</h2>
+
+<div class="card">
+    <div class="card-body">
+
+        <form asp-action="Edit" method="post">
+
+            <input type="hidden" asp-for="MemberId" />
+
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label">Username</label>
+                <input asp-for="Username" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Fullname" class="form-label">Họ tên</label>
+                <input asp-for="Fullname" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" type="email" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-warning">
+                Lưu thay đổi
+            </button>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Quay lại
+            </a>
+
+        </form>
+
+    </div>
+</div>
